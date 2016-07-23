@@ -1,0 +1,25 @@
+{
+  "name": "angular-url-parser",
+  "version": "0.0.1",
+  "homepage": "https://github.com/yllieth/angular-url-parser",
+  "authors": [
+    "Sylvain RAGOT <sylvnimes@hotmail.com>"
+  ],
+  "description": "Url parsing methods",
+  "main": "angular-url-parser.js",
+  "keywords": [
+    "angular",
+    "module",
+    "url",
+    "parser"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8"
+  }
+}

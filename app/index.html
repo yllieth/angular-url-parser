@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script type="application/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  </head>
+  <body ng-app="demo-angular-url-parser">
+
+  <div class="container" ng-controller="demoCtrl as Demo">
+    <div class="jumbotron">
+      <h1>Angular Url Parser</h1>
+      <p class="lead">Start parsing your url in the simpliest way</p>
+      <p>
+        <a class="btn btn-lg btn-success" href="https://github.com/yllieth/angular-url-parser" role="button">
+          <i class="fa fa-github"></i>
+          View on github
+        </a>
+      </p>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <h2>Url examples</h2>
+
+        <div class="row" style="margin-top: 20px">
+          <div class="col-lg-1"><input type="radio" ng-model="Demo.selectedUrl" ng-value="Demo.example.current" ng-change="Demo.changeUrl(Demo.example.current)"></div>
+          <div class="col-lg-11"><strong>Current url : </strong><code><small>{{ Demo.example.current }}</small></code></div>
+        </div>
+
+        <div class="row" style="margin-top: 20px">
+          <div class="col-lg-1"><input type="radio" ng-model="Demo.selectedUrl" ng-value="Demo.example.ex1" ng-change="Demo.changeUrl(Demo.example.ex1)"></div>
+          <div class="col-lg-11"><code><small>{{ Demo.example.ex1 }}</small></code></div>
+        </div>
+
+        <div class="row" style="margin-top: 20px">
+          <div class="col-lg-1"><input type="radio" ng-model="Demo.selectedUrl" ng-value="Demo.example.ex2" ng-change="Demo.changeUrl(Demo.example.ex2)"></div>
+          <div class="col-lg-11"><code><small>{{ Demo.example.ex2 }}</small></code></div>
+        </div>
+
+        <div class="row" style="margin-top: 20px">
+          <div class="col-lg-1"><input type="radio" ng-model="Demo.selectedUrl" ng-value="Demo.example.ex3" ng-change="Demo.changeUrl(Demo.example.ex3)"></div>
+          <div class="col-lg-11"><code><small>{{ Demo.example.ex3 }}</small></code></div>
+        </div>
+
+        <div class="row" style="margin-top: 20px">
+          <div class="col-lg-1"><input type="radio" ng-model="Demo.selectedUrl" ng-value="Demo.example.ex4" ng-change="Demo.changeUrl(Demo.example.ex4)"></div>
+          <div class="col-lg-11"><code><small>{{ Demo.example.ex4 }}</small></code></div>
+        </div>
+
+        <div class="row" style="margin-top: 20px">
+          <div class="col-lg-1"><input type="radio" ng-model="Demo.selectedUrl" ng-value="Demo.example.ex5" ng-change="Demo.changeUrl(Demo.example.ex5)"></div>
+          <div class="col-lg-11"><code><small>{{ Demo.example.ex5 }}</small></code></div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <h2>API</h2>
+
+        <!-- getProtocol -->
+        <div>
+          <div><strong><kbd>urlParser.getProtocol(   <small>{{ Demo.selectedUrl }}</small>   )</kbd></strong></div>
+          <div><pre>{{ Demo.protocol | json }}</pre></div>
+        </div>
+
+        <!-- getHost -->
+        <div>
+          <div><strong><kbd>urlParser.getHost(   <small>{{ Demo.selectedUrl }}</small>   )</kbd></strong></div>
+          <div><pre>{{ Demo.host | json }}</pre></div>
+        </div>
+
+        <!-- getHostname -->
+        <div>
+          <div><strong><kbd>urlParser.getHostname(   <small>{{ Demo.selectedUrl }}</small>   )</kbd></strong></div>
+          <div><pre>{{ Demo.hostname | json }}</pre></div>
+        </div>
+
+        <!-- getPort -->
+        <div>
+          <div><strong><kbd>urlParser.getPort(   <small>{{ Demo.selectedUrl }}</small>   )</kbd></strong></div>
+          <div><pre>{{ Demo.port | json }}</pre></div>
+        </div>
+
+        <!-- getRoute -->
+        <div>
+          <div><strong><kbd>urlParser.getRoute(   <small>{{ Demo.selectedUrl }}</small>   )</kbd></strong></div>
+          <div><pre>{{ Demo.route | json }}</pre></div>
+        </div>
+
+        <!-- getRouteAttributes -->
+        <div>
+          <div><strong><kbd>urlParser.getRouteAttributes(   <small>{{ Demo.selectedUrl }}</small>   )</kbd></strong></div>
+          <div><pre>{{ Demo.routeAttributes | json }}</pre></div>
+        </div>
+
+        <!-- getQuerystring -->
+        <div>
+          <div><strong><kbd>urlParser.getQuerystring(   <small>{{ Demo.selectedUrl }}</small>   )</kbd></strong></div>
+          <div><pre>{{ Demo.queryString | json }}</pre></div>
+        </div>
+
+        <!-- getOptions -->
+        <div>
+          <div><strong><kbd>urlParser.getOption(   <small>{{ Demo.selectedUrl }}</small>   )</kbd></strong></div>
+          <div><pre>{{ Demo.option | json }}</pre></div>
+        </div>
+
+        <!-- getHash -->
+        <div>
+          <div><strong><kbd>urlParser.getHash(   <small>{{ Demo.selectedUrl }}</small>   )</kbd></strong></div>
+          <div><pre>{{ Demo.hash | json }}</pre></div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="footer">
+      <hr/>
+      <p>© Yllieth 2016</p>
+    </footer>
+
+  </div>
+
+  <script type="application/javascript" src="../angular-url-parser.js"></script>
+  <script type="application/javascript" src="app.js"></script>
+  </body>
+</html>
