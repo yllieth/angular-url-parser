@@ -5,7 +5,8 @@
   "authors": [
     "Sylvain RAGOT <sylvnimes@hotmail.com>"
   ],
-  "description": "Url parsing methods",
+  "description": "Get simple methods to manipulate url parts",
+  "private": false,
   "main": "angular-url-parser.js",
   "keywords": [
     "angular",

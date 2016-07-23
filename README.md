@@ -22,7 +22,7 @@ Once the lib is downloaded,
     ```javascript
     angular
       .module('YOUR-ANGULAR-APP-NAME', [
-        'angular-url-parser'
+        'ngUrlParser'
       ])
       .controller('demoCtrl', function(urlParser) {
         this.protocol = urlParser.getProtocol();

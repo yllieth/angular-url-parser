@@ -1,6 +1,6 @@
 angular
-  .module('demo-angular-url-parser', ['angular-url-parser'])
-  .controller('demoCtrl', function($scope, urlParser) {
+  .module('demo-angular-url-parser', ['ngUrlParser'])
+  .controller('demoCtrl', function(urlParser) {
     'use strict';
 
     this.example = {

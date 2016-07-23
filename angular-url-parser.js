@@ -1,5 +1,5 @@
 angular
-  .module('angular-url-parser', [])
+  .module('ngUrlParser', [])
   .factory('urlParser', function () {
     'use strict';
 
