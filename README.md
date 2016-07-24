@@ -1,5 +1,5 @@
 # Angular URL parser
-Get simple methods to manipulate url parts
+Angular service to get simple methods to manipulate url parts
 
 > Demo: http://yllieth.github.io/angular-url-parser/app/index.html
 
@@ -8,7 +8,7 @@ Get simple methods to manipulate url parts
 ### Bower
 
 ```
-bower install angular-url-parser --save
+bower install yllieth/angular-url-parser --save
 ```
 
 Once the lib is downloaded, 
