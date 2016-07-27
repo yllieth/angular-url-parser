@@ -25,6 +25,7 @@ Once the lib is downloaded,
         'ngUrlParser'
       ])
       .controller('demoCtrl', function(urlParser) {
+        this.parts = urlParser.parse();
         this.protocol = urlParser.getProtocol();
         this.host = urlParser.getHost();
         this.hostname = urlParser.getHostname();
@@ -50,7 +51,22 @@ Once the lib is downloaded,
 - `getQuerystring([string] url): string` : Return the part of the given url with options
 - `getOption([string] param, [string] url): object|string` : Return a specific option in the url's options, or all options in an object
 - `getHash([string] url): string` : Return the hash of the given url
-
+- `parse([string] url): object` : Return parsed url in an object:
+    ```json
+    // urlParser.parse('http://localhost:3000/models?sort=asc#quantiles')
+  
+    {
+      "protocol": "http:",
+      "host": "localhost:3000",
+      "hostname": "localhost",
+      "port": "3000",
+      "pathname": "/models"
+      "search": "?sort=asc",
+      "searchObject": { "sort": "asc" },
+      "hash": "quantiles"
+    }
+    ```
+    
 # Contributing
 
 1. Fork it

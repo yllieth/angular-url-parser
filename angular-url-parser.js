@@ -1,3 +1,10 @@
+/**
+ * Angular service to get simple methods to manipulate url parts
+ *
+ * @version 0.0.2 - 2016-07-27
+ * @link https://github.com/yllieth/angular-url-parser
+ * @license MIT License, http://www.opensource.org/licenses/MIT
+ */
 angular
   .module('ngUrlParser', [])
   .factory('urlParser', function () {
@@ -31,6 +38,17 @@ angular
 
     return {
       /**
+       * Returns an object with url parts placed in different properties
+       *
+       * @param {string} [url] - location.href if not specified
+       * @returns {{protocol, host, hostname, port, pathname, search, searchObject, hash}}
+       */
+      parse: function (url) {
+        url = url || window.location.href;
+        return urlParser(url);
+      },
+
+      /**
        * Returns the protocol part of the given url
        *
        * Example:
@@ -42,7 +60,7 @@ angular
        */
       getProtocol: function (url) {
         url = url || window.location.href;
-        return urlParser(url).protocol;
+        return this.parse(url).protocol;
       },
 
       /**
@@ -57,7 +75,7 @@ angular
        */
       getHost: function (url) {
         url = url || window.location.href;
-        return urlParser(url).host;
+        return this.parse(url).host;
       },
 
       /**
@@ -72,7 +90,7 @@ angular
        */
       getHostname: function (url) {
         url = url || window.location.href;
-        return urlParser(url).hostname;
+        return this.parse(url).hostname;
       },
 
       /**
@@ -87,7 +105,7 @@ angular
        */
       getPort: function (url) {
         url = url || window.location.href;
-        return urlParser(url).port;
+        return this.parse(url).port;
       },
 
       /**
@@ -102,7 +120,7 @@ angular
        */
       getRoute: function (url) {
         url = url || window.location.href;
-        return urlParser(url).pathname;
+        return this.parse(url).pathname;
       },
 
       /**
@@ -131,7 +149,7 @@ angular
        */
       getQuerystring: function (url) {
         url = url || window.location.href;
-        return urlParser(url).search;
+        return this.parse(url).search;
       },
 
       /**
@@ -152,7 +170,7 @@ angular
       getOption: function (param, url) {
         url = url || window.location.href;
 
-        var searchOject = urlParser(url).searchObject;
+        var searchOject = this.parse(url).searchObject;
 
         if (typeof param === 'string') {
           return (searchOject.hasOwnProperty(param) === true)
@@ -175,7 +193,7 @@ angular
        */
       getHash: function (url) {
         url = url || window.location.href;
-        return urlParser(url).hash;
+        return this.parse(url).hash;
       }
     };
   });
