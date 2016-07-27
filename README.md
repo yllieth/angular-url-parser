@@ -11,36 +11,44 @@ Angular service to get simple methods to manipulate url parts
 bower install yllieth/angular-url-parser --save
 ```
 
-Once the lib is downloaded, 
+Once the lib is downloaded, add a reference in your index.html 
 
-1. add a reference in your index.html 
+```
+<script type="application/javascript" src="../bower_components/angular-url-parser/angular-url-parser.js"></script>
+```
 
-    `<script type="application/javascript" src="../bower_components/angular-url-parser/angular-url-parser.js"></script>`
-    
-2. add the module in your angular application
-    
-    ```javascript
-    angular
-      .module('YOUR-ANGULAR-APP-NAME', [
-        'ngUrlParser'
-      ])
-      .controller('demoCtrl', function(urlParser) {
-        this.parts = urlParser.parse();
-        this.protocol = urlParser.getProtocol();
-        this.host = urlParser.getHost();
-        this.hostname = urlParser.getHostname();
-        this.port = urlParser.getPort();
-        this.route = urlParser.getRoute();
-        this.routeAttributes = urlParser.getRouteAttributes();
-        this.queryString = urlParser.getQuerystring();
-        this.option = urlParser.getOption();
-        this.hash = urlParser.getHash();
-      })
-    ```
+### Rails
 
-3. enjoy!
+In your `Gemfile`, add the following line:
+```ruby
+gem 'angular-url-parser-rails'
+```
+
+In your `application.js`, add the following line:
+```
+//= require angular-url-parser
+```
 
 ## Usage
+
+```javascript
+angular
+  .module('YOUR-ANGULAR-APP-NAME', [
+    'ngUrlParser'
+  ])
+  .controller('demoCtrl', function(urlParser) {
+    this.parts           = urlParser.parse();
+    this.protocol        = urlParser.getProtocol();
+    this.host            = urlParser.getHost();
+    this.hostname        = urlParser.getHostname();
+    this.port            = urlParser.getPort();
+    this.route           = urlParser.getRoute();
+    this.routeAttributes = urlParser.getRouteAttributes();
+    this.queryString     = urlParser.getQuerystring();
+    this.option          = urlParser.getOption();
+    this.hash            = urlParser.getHash();
+  })
+```
 
 - `getProtocol([string] url): string` : Return the protocol of the given url - Example: _"http:"_, _"https:"_, ...
 - `getHost([string] url): string` : Return the host of the given url (without port) - Example: _"github.com"_, _"localhost"_, ...
@@ -57,13 +65,13 @@ Once the lib is downloaded,
   
     {
       "protocol": "http:",
-      "host": "localhost:3000",
+      "host":     "localhost:3000",
       "hostname": "localhost",
-      "port": "3000",
-      "pathname": "/models"
-      "search": "?sort=asc",
+      "port":     "3000",
+      "pathname": "/models",
+      "search":   "?sort=asc",
       "searchObject": { "sort": "asc" },
-      "hash": "quantiles"
+      "hash":     "quantiles"
     }
     ```
     
