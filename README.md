@@ -21,7 +21,7 @@ Once the lib is downloaded, add a reference in your index.html
 
 In your `Gemfile`, add the following line:
 ```ruby
-gem 'angular-url-parser-rails'
+gem 'angular_url_parser_rails'
 ```
 
 In your `application.js`, add the following line:
