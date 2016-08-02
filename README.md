@@ -2,6 +2,7 @@
 Angular service to get simple methods to manipulate url parts
 
 > Demo: http://yllieth.github.io/angular-url-parser/app/index.html
+> Rails gem: https://github.com/yllieth/angular_url_parser_rails
 
 ## Installation
 
