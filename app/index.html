@@ -25,35 +25,11 @@
       <div class="col-lg-6">
         <h2>Url examples</h2>
 
-        <div class="row" style="margin-top: 20px">
-          <div class="col-lg-1"><input type="radio" ng-model="Demo.selectedUrl" ng-value="Demo.example.current" ng-change="Demo.changeUrl(Demo.example.current)"></div>
-          <div class="col-lg-11"><strong>Current url : </strong><code><small>{{ Demo.example.current }}</small></code></div>
+        <div class="row" style="margin-top: 20px" ng-repeat="(demoName, url) in Demo.example" >
+          <div class="col-lg-1"><input type="radio" ng-model="Demo.selectedUrl" ng-value="url" ng-change="Demo.changeUrl(url)"></div>
+          <div class="col-lg-11"><strong>{{demoName}} : </strong><code><small>{{ url }}</small></code></div>
         </div>
-
-        <div class="row" style="margin-top: 20px">
-          <div class="col-lg-1"><input type="radio" ng-model="Demo.selectedUrl" ng-value="Demo.example.ex1" ng-change="Demo.changeUrl(Demo.example.ex1)"></div>
-          <div class="col-lg-11"><code><small>{{ Demo.example.ex1 }}</small></code></div>
-        </div>
-
-        <div class="row" style="margin-top: 20px">
-          <div class="col-lg-1"><input type="radio" ng-model="Demo.selectedUrl" ng-value="Demo.example.ex2" ng-change="Demo.changeUrl(Demo.example.ex2)"></div>
-          <div class="col-lg-11"><code><small>{{ Demo.example.ex2 }}</small></code></div>
-        </div>
-
-        <div class="row" style="margin-top: 20px">
-          <div class="col-lg-1"><input type="radio" ng-model="Demo.selectedUrl" ng-value="Demo.example.ex3" ng-change="Demo.changeUrl(Demo.example.ex3)"></div>
-          <div class="col-lg-11"><code><small>{{ Demo.example.ex3 }}</small></code></div>
-        </div>
-
-        <div class="row" style="margin-top: 20px">
-          <div class="col-lg-1"><input type="radio" ng-model="Demo.selectedUrl" ng-value="Demo.example.ex4" ng-change="Demo.changeUrl(Demo.example.ex4)"></div>
-          <div class="col-lg-11"><code><small>{{ Demo.example.ex4 }}</small></code></div>
-        </div>
-
-        <div class="row" style="margin-top: 20px">
-          <div class="col-lg-1"><input type="radio" ng-model="Demo.selectedUrl" ng-value="Demo.example.ex5" ng-change="Demo.changeUrl(Demo.example.ex5)"></div>
-          <div class="col-lg-11"><code><small>{{ Demo.example.ex5 }}</small></code></div>
-        </div>
+        
       </div>
 
       <div class="col-lg-6">
