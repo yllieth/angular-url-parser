@@ -21,7 +21,21 @@ angular
 
       for( i = 0; i < queries.length; i++ ) {
         split = queries[i].split('=');
-        searchObject[split[0]] = split[1];
+        // handle query strings such as id=1&id=2&id=3
+        if(searchObject.hasOwnProperty(split[0])) {
+          var currentVal = searchObject[split[0]];
+          var valueList;
+          if(!angular.isArray(currentVal)){
+            valueList = [];
+            valueList.push(currentVal);
+          } else {
+            valueList = currentVal;
+          }
+          valueList.push(split[1]);
+          searchObject[split[0]] = valueList;
+        } else {
+          searchObject[split[0]] = split[1];
+        }
       }
 
       return {
