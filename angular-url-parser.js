@@ -1,7 +1,7 @@
 /**
  * Angular service to get simple methods to manipulate url parts
  *
- * @version 0.0.2 - 2016-07-27
+ * @version 0.0.3 - 2017-06-22
  * @link https://github.com/yllieth/angular-url-parser
  * @license MIT License, http://www.opensource.org/licenses/MIT
  */
