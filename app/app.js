@@ -9,6 +9,7 @@ angular
         ex3: 'http://localhost:3000/profile/yllieth',
         ex4: 'http://localhost:3000/profile/yllieth?page=1&sort=asc',
         ex5: 'http://localhost:3000#personal_information',
+        ex6: 'http://localhost:3000/profile?id=1&id=2&sort=asc',
         current: location.href
     };
 
